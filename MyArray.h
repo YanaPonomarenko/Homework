@@ -7,6 +7,10 @@ private:
 public:
 	MyArray();
 	MyArray(int* arr1, int size1);
+	MyArray(int size1);//
+	MyArray(const MyArray& obj);//
+
+	~MyArray();//
 
 	int* getArray();
 	int getSize();
@@ -18,6 +22,9 @@ public:
 	void sortArray();
 	int findIndex(int element);
 	void printArray();
+	void fillArray();//
+	int getMin();//
+	int getMax();//
 
 };
 

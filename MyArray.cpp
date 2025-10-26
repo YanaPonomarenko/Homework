@@ -18,6 +18,31 @@ MyArray::MyArray(int* arr1, int size1)
 	}
 }
 
+MyArray::MyArray(int size1)
+{
+	size = size1;
+	array = new int[size];
+	for (int i = 0; i < size; i++) 
+	{
+		array[i] = 0;
+	}
+}
+
+MyArray::MyArray(const MyArray& obj)
+{
+	size = obj.size;
+	array = new int[size];
+	for (int i = 0; i < size; i++) 
+	{
+		array[i] = obj.array[i];
+	}
+}
+
+MyArray::~MyArray()
+{
+	delete[] array;
+}
+
 int* MyArray::getArray()
 {
 	return array;
@@ -119,4 +144,50 @@ void MyArray::printArray()
 		}
 	}
 	cout << "]" <<endl;
+}
+
+void MyArray::fillArray()
+{
+	cout << "¬вед≥ть " << size << " елементв масиву " <<endl;
+	for (int i = 0; i < size; i++) 
+	{
+		cout << "≈лемент " << i << ": ";
+		cin >> array[i];
+	}
+}
+
+int MyArray::getMin()
+{
+	if (size == 0) 
+	{
+		return 0;
+	}
+
+	int min = array[0];
+	for (int i = 1; i < size; i++) 
+	{
+		if (array[i] < min) 
+		{
+			min = array[i];
+		}
+	}
+	return min;
+}
+
+int MyArray::getMax()
+{
+	if (size == 0) 
+	{
+		return 0;
+	}
+
+	int max = array[0];
+	for (int i = 1; i < size; i++) 
+	{
+		if (array[i] > max) 
+		{
+			max = array[i];
+		}
+	}
+	return max;
 }
