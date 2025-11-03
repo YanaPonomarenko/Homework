@@ -1,20 +1,22 @@
-#pragma once
+﻿#pragma once
+#include <iostream>
+
 class Fraction
 {
 private:
-    int numerator;
-    int denominator;
-
+    int num;
+    int den;
 public:
-    Fraction(int num, int den) 
-    {
-        numerator = num;
-        denominator = den;
-    }
-    
-    double sum(Fraction& obj);
-    double subtraction(Fraction& obj);
-    double multiply(Fraction& obj);
-    double division(Fraction& obj);
+    Fraction();
+    Fraction(int num, int den);
+    int getNum() const;
+    int getDen() const;
+    void setNum(int num);
+    void setDen(int den);
+    Fraction operator+(const Fraction& obj) const;
+    Fraction operator-(const Fraction& obj) const;
+    Fraction operator*(const Fraction& obj) const;
+    Fraction operator/(const Fraction& obj) const;
 };
+std::ostream& operator<<(std::ostream& out, const Fraction& f);
 

@@ -1,18 +1,17 @@
+п»ї#include "Fraction.h"
 #include <iostream>
-#include "Fraction.h"
 using namespace std;
 
-int main()
-{
-    setlocale(LC_ALL, "");
-	Fraction fr1(9, 4);
-	Fraction fr2(5, 8);
+int main() {
+    Fraction f1(6, 9);
+    Fraction f2(4, 6);
 
-    cout << "Сума " << fr1.sum(fr2) << endl;
-    cout << "Різниця " << fr1.subtraction(fr2) << endl;
-    cout << "Добуток " << fr1.multiply(fr2) << endl;
-    cout << "Частка " << fr1.division(fr2) << endl;
+    cout << "f1 = " << f1 << endl;
+    cout << "f2 = " << f2 << endl;
+    cout << "f1 + f2 = " << f1 + f2 << endl;
+    cout << "f1 - f2 = " << f1 - f2 << endl;
+    cout << "f1 * f2 = " << f1 * f2 << endl;
+    cout << "f1 / f2 = " << f1 / f2 << endl;
 
     return 0;
-
 }

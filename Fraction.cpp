@@ -1,27 +1,69 @@
-#include <iostream>
+п»ї#include <iostream>
 #include "Fraction.h"
 using namespace std;
 
-double Fraction::sum(Fraction& obj)
+Fraction::Fraction() 
 {
-    return (double)this->numerator / this->denominator + (double)obj.numerator / obj.denominator;
-}
-double Fraction::subtraction(Fraction& obj) 
-{
-    return (double)this->numerator / this->denominator - (double)obj.numerator / obj.denominator;
+    num = 0;
+    den = 1;
 }
 
-double Fraction::multiply(Fraction& obj) 
+Fraction::Fraction(int num, int den) 
 {
-    return ((double)this->numerator / this->denominator) * ((double)obj.numerator / obj.denominator);
+    this->num = num;
+    this->den = den;
 }
 
-double Fraction::division(Fraction& obj) 
+int Fraction::getNum() const 
 {
-    if (obj.numerator == 0) 
-    {
-        cout << "На нуль ділити не можна" << endl;
-        return 0;
-    }
-    return ((double)this->numerator / this->denominator) / ((double)obj.numerator / obj.denominator);
+    return this->num;
+}
+
+int Fraction::getDen() const 
+{
+    return this->den;
+}
+
+void Fraction::setNum(int num) 
+{
+    this->num = num;
+}
+
+void Fraction::setDen(int den) 
+{
+    this->den = den;
+}
+
+Fraction Fraction::operator+(const Fraction& obj) const 
+{
+    int new_num = this->num * obj.den + obj.num * this->den;
+    int new_den = this->den * obj.den;
+    return Fraction(new_num, new_den);
+}
+
+Fraction Fraction::operator-(const Fraction& obj) const 
+{
+    int new_num = this->num * obj.den - obj.num * this->den;
+    int new_den = this->den * obj.den;
+    return Fraction(new_num, new_den);
+}
+
+Fraction Fraction::operator*(const Fraction& obj) const 
+{
+    int new_num = this->num * obj.num;
+    int new_den = this->den * obj.den;
+    return Fraction(new_num, new_den);
+}
+
+Fraction Fraction::operator/(const Fraction& obj) const 
+{
+    int new_num = this->num * obj.den;
+    int new_den = this->den * obj.num;
+    return Fraction(new_num, new_den);
+}
+
+ostream& operator<<(ostream& out, const Fraction& f) 
+{
+    out << f.getNum() << "/" << f.getDen();
+    return out;
 }
