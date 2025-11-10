@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿/*#include <iostream>
 #include "MyArray.h"
 using namespace std;
 
@@ -21,4 +21,4 @@ int main()
     cout << "Сума коордтнат " << myarr.sumElement() << endl;
 
     return 0;
-}
+}*/

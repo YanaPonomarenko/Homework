@@ -131,6 +131,7 @@
     <ClCompile Include="mainMyString.cpp" />
     <ClCompile Include="mainStudent.cpp" />
     <ClCompile Include="mainStudentHW.cpp" />
+    <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MyArray.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Source1.cpp" />
