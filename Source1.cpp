@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 
 struct Point
@@ -179,4 +179,4 @@ void write_point_to_file(FILE* file, Point* points, int size)
 void read_point_from_file(FILE* file)
 {
     // 
-}
+}*/

@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿/*#include <iostream>
 #include <cstdio>
 #include <cctype>
 #include "Windows.h"
@@ -102,4 +102,4 @@ int main() {
     cout << "Вхідний файл: " << input_filename << endl;
     cout << "Вихідний файл: " << output_filename << endl;
     return 0;
-}
+}*/

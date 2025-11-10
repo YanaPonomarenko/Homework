@@ -1,4 +1,4 @@
-﻿#include "HouseComplex.h"
+﻿/*#include "HouseComplex.h"
 
 int main() 
 {
@@ -25,4 +25,4 @@ int main()
     complexCopy.showInfo();
 
     return 0;
-}
+}*/

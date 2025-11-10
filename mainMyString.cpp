@@ -1,4 +1,4 @@
-﻿#include "MyString.h"
+﻿/*#include "MyString.h"
 #include <iostream>
 using namespace std;
 
@@ -26,4 +26,4 @@ int main() {
     cout << "copied: " << str5.getStr() << endl;
 
     return 0;
-}
+}*/

@@ -1,5 +1,5 @@
-#include <iostream>
-#include "StudentHW.h"
+
+/*#include "StudentHW.h"
 using namespace std;
 
 int main()
@@ -9,4 +9,4 @@ int main()
 	s.input();
 	s.output();
 	return 0;
-}
+}*/

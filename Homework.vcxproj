@@ -123,7 +123,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fraction.cpp" />
+    <ClCompile Include="HouseComplex.cpp" />
+    <ClCompile Include="mainFraction.cpp" />
+    <ClCompile Include="mainHouseComplex.cpp" />
+    <ClCompile Include="mainMyArray.cpp" />
+    <ClCompile Include="mainMyString.cpp" />
+    <ClCompile Include="mainStudent.cpp" />
+    <ClCompile Include="mainStudentHW.cpp" />
+    <ClCompile Include="MyArray.cpp" />
+    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Source1.cpp" />
+    <ClCompile Include="Source2.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentHW.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Fraction.h" />
+    <ClInclude Include="HouseComplex.h" />
+    <ClInclude Include="MyArray.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentHW.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

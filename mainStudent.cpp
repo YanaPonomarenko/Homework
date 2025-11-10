@@ -1,4 +1,4 @@
-#include <iostream>
+/*#include <iostream>
 #include "Student.h"
 using namespace std;
 
@@ -45,4 +45,4 @@ int main()
     cout << "Студент 4: " << name << ", " << student4.getAge() << " років\nCередній бал: " << student4.getAverage() <<endl;
    
     return 0;
-}
+}*/
