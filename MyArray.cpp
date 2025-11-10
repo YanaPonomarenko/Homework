@@ -1,193 +1,122 @@
+п»ї#include "MyArray.h"
 #include <iostream>
-#include "MyArray.h"
 using namespace std;
-
-MyArray::MyArray()
+//Point
+Point::Point() 
 {
-	array = nullptr;
-	size = 0;
+    x = 0;
+    y = 0;
+}
+Point::Point(int x, int y) 
+{
+    this->x = x;
+    this->y = y;
+}
+void Point::setX(int x) 
+{ 
+    this->x = x; 
+}
+void Point::setY(int y) 
+{ 
+    this->y = y; 
+}
+int Point::getX() const 
+{ 
+    return x; 
+}
+int Point::getY() const 
+{ 
+    return y; 
 }
 
-MyArray::MyArray(int* arr1, int size1)
+void Point::valueUp(int n) 
 {
-	size = size1;
-	array = new int[size];
-	for (int i = 0; i < size; i++)
-	{
-		array[i] = arr1[i];
-	}
+    x += n;
+    y += n;
 }
 
-MyArray::MyArray(int size1)
+int Point::sum() const 
 {
-	size = size1;
-	array = new int[size];
-	for (int i = 0; i < size; i++) 
-	{
-		array[i] = 0;
-	}
+    return x + y;
 }
 
-MyArray::MyArray(const MyArray& obj)
+void Point::print() const 
 {
-	size = obj.size;
-	array = new int[size];
-	for (int i = 0; i < size; i++) 
-	{
-		array[i] = obj.array[i];
-	}
+    cout << "(" << x << "  " << y << ")";
 }
 
-MyArray::~MyArray()
+ostream& operator<<(ostream& os, const Point& p) 
 {
-	delete[] array;
+    os << "(" << p.getX() << ", " << p.getY() << ")";
+    return os;
+}
+//MyArray
+template <typename T>
+MyArray<T>::MyArray() : size(0), arr(nullptr) {}
+
+template <typename T>
+MyArray<T>::MyArray(unsigned int size) : size(size) 
+{
+    arr = new T[size];
 }
 
-int* MyArray::getArray()
+template <typename T>
+MyArray<T>::~MyArray() 
 {
-	return array;
+    delete[] arr;
 }
 
-int MyArray::getSize()
+template <typename T>
+void MyArray<T>::printElement() const 
 {
-	return size;
+    for (unsigned int i = 0; i < size; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
-void MyArray::setArray(int* arr1, int size1)
+template <typename T>
+void MyArray<T>::valueUp(int n) 
 {
-	if (array != nullptr)
-	{
-		delete[] array;
-	}
-	size = size1;
-	array = new int[size];
-
-	for (int i = 0; i < 0; i++)
-	{
-		array[i] = arr1[i];
-	}
+    for (unsigned int i = 0; i < size; i++) 
+    {
+        arr[i].valueUp(n);
+    }
 }
 
-void MyArray::setSize(int newSize)
-{
-	if (newSize <= 0)
-	{
-		return;
-	}
-	int* newArray = new int[newSize];
-
-	for (int i = 0; i < newSize && i < size; i++) 
-	{
-		newArray[i] = array[i];
-	}
-
-	for (int i = size; i < newSize; i++) 
-	{
-		newArray[i] = 0;
-	}
-	if (array != nullptr) 
-	{
-		delete[] array;
-	}
-
-	array = newArray;
-	size = newSize;
+template <typename T>
+int MyArray<T>::sumElement() const {
+    int total = 0;
+    for (unsigned int i = 0; i < size; i++) 
+    {
+        total += arr[i].sum();
+    }
+    return total;
 }
 
-int MyArray::getSum()
-{
-	int sum = 0;
-	for (int i = 0; i < size; i++) 
-	{
-		sum += array[i];
-	}
-	return sum;
+template <typename T>
+unsigned int MyArray<T>::getSize() const {
+    return size;
 }
 
-void MyArray::sortArray()
+template <typename T>
+void MyArray<T>::setElement(unsigned int index, const T& value) 
 {
-	for (int i = 0; i < size - 1; i++) 
-	{
-		for (int j = 0; j < size - i - 1; j++) 
-		{
-			if (array[j] > array[j + 1]) 
-			{
-				int temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-			}
-		}
-	}
+    if (index < size) 
+    {
+        arr[index] = value;
+    }
 }
 
-int MyArray::findIndex(int element)
+template <typename T>
+T MyArray<T>::getElement(unsigned int index) const 
 {
-	for (int i = 0; i < size; i++) 
-	{
-		if (array[i] == element) 
-		{
-			return i;
-		}
-	}
-	return -1;
+    if (index < size) 
+    {
+        return arr[index];
+    }
+    return T();
 }
 
-void MyArray::printArray()
-{
-	cout << "Масив: [";
-	for (int i = 0; i < size; i++) 
-	{
-		std::cout << array[i];
-		if (i < size - 1) 
-		{
-			std::cout << ", ";
-		}
-	}
-	cout << "]" <<endl;
-}
-
-void MyArray::fillArray()
-{
-	cout << "Введіть " << size << " елементв масиву " <<endl;
-	for (int i = 0; i < size; i++) 
-	{
-		cout << "Елемент " << i << ": ";
-		cin >> array[i];
-	}
-}
-
-int MyArray::getMin()
-{
-	if (size == 0) 
-	{
-		return 0;
-	}
-
-	int min = array[0];
-	for (int i = 1; i < size; i++) 
-	{
-		if (array[i] < min) 
-		{
-			min = array[i];
-		}
-	}
-	return min;
-}
-
-int MyArray::getMax()
-{
-	if (size == 0) 
-	{
-		return 0;
-	}
-
-	int max = array[0];
-	for (int i = 1; i < size; i++) 
-	{
-		if (array[i] > max) 
-		{
-			max = array[i];
-		}
-	}
-	return max;
-}
+template class MyArray<Point>;
