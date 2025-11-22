@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="HouseComplex.cpp" />
+    <ClCompile Include="LinkedListcpp.cpp" />
     <ClCompile Include="mainFraction.cpp" />
     <ClCompile Include="mainHouseComplex.cpp" />
     <ClCompile Include="mainMyArray.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Source1.cpp" />
     <ClCompile Include="Source2.cpp" />
+    <ClCompile Include="Source3.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentHW.cpp" />
   </ItemGroup>

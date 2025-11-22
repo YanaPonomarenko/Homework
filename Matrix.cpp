@@ -1,4 +1,4 @@
-﻿#pragma once
+﻿/*#pragma once
 #include <iostream>
 using namespace std;
 
@@ -215,4 +215,4 @@ int main()
     cout << "Мінімальний елемент матриці 1: " << mat1.findMin() << endl;
 
     return 0;
-}
+}*/

@@ -1,2 +1,3 @@
 ﻿  Matrix.cpp
-  Homework.vcxproj -> C:\Users\ypono\source\repos\pv_521\x64\Debug\Homework.exe
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\ypono\source\repos\pv_521\x64\Debug\Homework.exe : fatal error LNK1120: 1 unresolved externals
