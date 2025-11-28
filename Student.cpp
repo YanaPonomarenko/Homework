@@ -1,5 +1,4 @@
-#include "Student.h"
-#include <iostream>
+ο»Ώ/*#include <iostream>
 
 Student::Student()
 {
@@ -11,7 +10,7 @@ Student::Student()
 		grades[i] = 0;
 	}
 }
-//βλΰρν³ δΰν³
+//Π²Π»Π°ΡΠ½Ρ– Π΄Π°Π½Ρ–
 Student::Student(const char* studentName, int studentAge,int studentGrades[5])
 {
 	name = new char[50];
@@ -80,5 +79,5 @@ bool Student::isExcellent()
 		}
 	}
 	return true;
-}
+}*/
 

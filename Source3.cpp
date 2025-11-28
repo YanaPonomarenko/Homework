@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿/*#include <iostream>
 using namespace std;
 
 
@@ -96,4 +96,4 @@ int main()
   delete[] name;
 
   return 0;
-}
+}*/
