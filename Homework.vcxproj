@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arene.cpp" />
+    <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="HouseComplex.cpp" />
     <ClCompile Include="LinkedListcpp.cpp" />
